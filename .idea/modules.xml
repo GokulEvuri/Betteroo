@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Betteroo.iml" filepath="$PROJECT_DIR$/Betteroo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Betteroo/Betteroo-Betteroo.iml" filepath="$PROJECT_DIR$/Betteroo/Betteroo-Betteroo.iml" />
+    </modules>
+  </component>
+</project>
+
