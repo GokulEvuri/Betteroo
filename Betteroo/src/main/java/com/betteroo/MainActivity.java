@@ -1,8 +1,6 @@
 package com.betteroo;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,21 +8,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME
+                | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,27 +40,25 @@ public class MainActivity extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        switch (item.getItemId()){
+            case R.id.action_settings:
+            openSettings();
             return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+            case R.id.action_search:
+            openSearch();
+            return true;
 
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_mail, container, false);
-            return rootView;
+            default:
+            return super.onOptionsItemSelected(item);
         }
     }
+
+    public void openSettings(){
+    }
+    public void openSearch(){
+
+    }
+
 
 }

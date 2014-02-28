@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <!-- Search, should appear as action button -->
     <item android:id="@+id/action_search"
         android:title="@string/action_search"
+        android:orderInCategory="300"
         android:showAsAction="ifRoom" />
-    <!-- Settings, should always be in the overflow -->
+
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:showAsAction="never" />
+        android:orderInCategory="200"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/new_post"
+        android:src="@drawable/ic_action_new"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        />
+
 </menu>
